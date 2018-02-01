@@ -1,0 +1,34 @@
+//The classic problem : Needle in a haystack
+//Programming language used : Java
+/* Explanation of problem :
+Find the needle( a small string) for example : ACK in a large haystack ( large string ) , example : HAYSTACK and print the index of the occurrence. 
+In this case, answer is 5, i.e., index of ACK in HAYSTACK
+*/
+
+
+public class NeedleInAHayStack {
+	
+	public static void checkNeedleInAHayStack(String needle, String haystack) {
+		
+		int lengthOfNeedle = needle.length();
+		int lengthOfHayStack = haystack.length();
+	
+		for(int i=0; i<=lengthOfHayStack-lengthOfNeedle; i++){
+			String currentSubstring = haystack.substring(i, i+lengthOfNeedle);
+			if(needle.equals(currentSubstring)){
+				System.out.println("Needle found at index: "+i);
+			}
+			
+		}
+		
+		
+	}
+	
+	public static void main(String args[]){
+		String needle= "ACK";
+		String hayStack = "HACKYSTACK";
+		checkNeedleInAHayStack(needle, hayStack);
+	}
+
+}
+
